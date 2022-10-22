@@ -1,0 +1,15 @@
+.title {
+	display: inline-block;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.8);
+	margin: 0 1.5%;
+	background-color: none;
+	border: 2px solid #000;
+}
+
+.title.done {
+	text-decoration: line-through;
+	opacity: 0.2;
+}

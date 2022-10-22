@@ -1,0 +1,8 @@
+ПОИСК:
+https://jsonplaceholder.typicode.com/todos?id=3
+
+ПО ID:
+https://jsonplaceholder.typicode.com/todos/3
+
+Пагинация:
+https://jsonplaceholder.typicode.com/todos?_page=2&_limit=10
