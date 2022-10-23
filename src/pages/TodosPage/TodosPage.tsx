@@ -16,6 +16,7 @@ const TodosPage: React.FC = () => {
 
 	const { pageNumber, limit, length } = useAppSelector((state) => state.todosReducer.pagination);
 	const search = useAppSelector((state) => state.todosReducer.search);
+	const loading = useAppSelector((state) => state.todosReducer.loading);
 
 	const changeVisibility = () => changeModalVis();
 
@@ -35,7 +36,7 @@ const TodosPage: React.FC = () => {
 				TODOS{" "}
 			</h1>
 			<Search />
-			<Loading />
+			<Loading loading={loading}/>
 			<Todos />
 			<Pagination limit={limit} length={length} setPage={setTodosPage} />
 			<button className="btn btn-danger btnModify" onClick={changeVisibility}>

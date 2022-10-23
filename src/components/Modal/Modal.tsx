@@ -8,7 +8,6 @@ import { useActionCreators } from "../../hooks/bindActions";
 
 // компонеты
 import AddTodoForm from "../AddTodoForm";
-import Loading from "../Loading";
 
 const Modal = () => {
 	const { changeModalVis } = useActionCreators();
@@ -16,7 +15,6 @@ const Modal = () => {
 	const closeModal = () => changeModalVis();
 	return (
 		<section className="addTodoModal" onClick={closeModal}>
-			<Loading />
 			<AddTodoForm />
 		</section>
 	);
