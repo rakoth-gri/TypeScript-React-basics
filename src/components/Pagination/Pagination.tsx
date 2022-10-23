@@ -2,41 +2,36 @@ import React, { useMemo, useState, memo, useCallback } from "react";
 import "./Pagination.css";
 
 // хуки
-import { useAppDispatch } from "../../store/store";
-import { useActionCreators } from "../../hooks/bindActions";
-
+import { useAppDispatch} from "../../store/store";
 
 // типы
 interface IPaginationProps {
 	limit: number;
-	allTodosLength: number;
+	length: number;
+	setPage: (data: number) => void;
 }
 
-const Pagination: React.FunctionComponent<IPaginationProps> = memo(({ limit, allTodosLength }) => {
-	const { setPageNumberAction } = useActionCreators();
+const Pagination: React.FunctionComponent<IPaginationProps> = memo(({ limit, length, setPage }) => {
 
-	const [isActive, setIsActive] = useState(1);
+	const [isActive, setIsActive] = useState(0);
 
-	const array = useMemo(
-		() => new Array(Math.ceil((allTodosLength - 1) / limit)).fill("").map((i, ind) => ind + 1),
-		[]
-	);
+	const array = useMemo(() => new Array(Math.ceil((length) / limit)).fill("").map((_, ind) => ind), []);
 
 	const handler = useCallback((data: number) => {
 		setIsActive(data);
-		setPageNumberAction(data);
+		setPage(data);
 	}, []);
 
 	return (
 		<section className="pagination">
-			{array.map((number) => (
+			{array.map((item) => (
 				<button
-					key={number}
-					className={`${number === isActive ? "activeBtn" : ""} text text-warning`}
-					onClick={() => handler(number)}
+					key={item}
+					className={`${item === isActive ? "activeBtn" : ""} text text-warning`}
+					onClick={() => handler(item)}
 				>
 					{" "}
-					{number}
+					{item + 1}
 				</button>
 			))}
 		</section>

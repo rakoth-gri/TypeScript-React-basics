@@ -15,9 +15,9 @@ export const todoReducerActionsCreators = {
 		payload: arr,
 	}),
 
-	setPageNumberAction: (page: number): todosReducerActions => ({
-		type: todosReducerEnum.setPageNumber,
-		payload: page,
+	setTodosPage: (page: number): todosReducerActions => ({
+		type: todosReducerEnum.setTodosPage,
+		payload: page + 1,
 	}),
 
 	setErrorAction: (mess: string): todosReducerActions => ({

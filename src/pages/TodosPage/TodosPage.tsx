@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import "./TodosPage.css";
 
 // хуки
-import {useAppSelector } from "../../store/store";
-import {useActionCreators} from "../../hooks/bindActions";
+import { useAppSelector } from "../../store/store";
+import { useActionCreators } from "../../hooks/bindActions";
 
 // компоненты
 import Pagination from "../../components/Pagination";
@@ -11,11 +11,10 @@ import Todos from "../../components/Todos";
 import Loading from "../../components/Loading";
 import Search from "../../components/Search";
 
-const TodosPage: React.FC = () => {	
+const TodosPage: React.FC = () => {
+	const { changeModalVis, fetchSearchedTodos, fetchTodos, setTodosPage } = useActionCreators();
 
-	const { changeModalVis, fetchSearchedTodos, fetchTodos } = useActionCreators();
-
-	const { pageNumber, limit, allTodosLength } = useAppSelector((state) => state.todosReducer.pagination);
+	const { pageNumber, limit, length } = useAppSelector((state) => state.todosReducer.pagination);
 	const search = useAppSelector((state) => state.todosReducer.search);
 
 	const changeVisibility = () => changeModalVis();
@@ -26,6 +25,7 @@ const TodosPage: React.FC = () => {
 			return;
 		}
 		fetchTodos(pageNumber, limit);
+		
 	}, [pageNumber, search]);
 
 	return (
@@ -37,7 +37,7 @@ const TodosPage: React.FC = () => {
 			<Search />
 			<Loading />
 			<Todos />
-			<Pagination limit={limit} allTodosLength={allTodosLength} />
+			<Pagination limit={limit} length={length} setPage={setTodosPage} />
 			<button className="btn btn-danger btnModify" onClick={changeVisibility}>
 				{" "}
 				Добавить Задачу{" "}

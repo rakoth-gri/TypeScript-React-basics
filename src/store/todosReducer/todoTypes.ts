@@ -2,7 +2,7 @@
 export enum todosReducerEnum {
 	loading = "loading",
 	fetchTodos = "fetchTodos",
-	setPageNumber = "setPageNumber",
+	setTodosPage = "setTodosPage",
 	setError = "setError",
 	changeTodo = "changeTodo",
 	setSearch = "setSearch",
@@ -25,7 +25,7 @@ export interface INewTodo {
 export interface IPagination {
 	pageNumber: number;
 	limit: number;
-	allTodosLength: number;
+	length: number;
 }
 
 // типизация экшенов!
@@ -38,8 +38,8 @@ type setTodosAction = {
 	payload: ITodo[];
 };
 
-type setPageNumberAction = {
-	type: todosReducerEnum.setPageNumber;
+type setTodosPage = {
+	type: todosReducerEnum.setTodosPage;
 	payload: number;
 };
 
@@ -63,7 +63,7 @@ type changeModalVis = {
 };
 
 // Обобщающий тип для экшенов:
-export type todosReducerActions = setLoadingAction | setTodosAction | setPageNumberAction | setErrorAction | changeTodo | setSearch | changeModalVis;
+export type todosReducerActions = setLoadingAction | setTodosAction | setTodosPage | setErrorAction | changeTodo | setSearch | changeModalVis;
 
 export interface todosState {
 	loading: boolean;

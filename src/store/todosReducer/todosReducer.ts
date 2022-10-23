@@ -1,5 +1,5 @@
 // экспортируем необходимые типы:
-import { todosReducerActions, todosState, todosReducerEnum} from "./todoTypes";
+import { todosReducerActions, todosState, todosReducerEnum } from "./todoTypes";
 
 // сервисы ----->>>>
 import { LS } from "../../services/ls";
@@ -12,7 +12,7 @@ const initState: todosState = {
 	todos: [],
 	completed: LS.getFromLS(completedKey),
 	error: null,
-	pagination: { pageNumber: 1, limit: 10, allTodosLength: 200 },
+	pagination: { pageNumber: 1, limit: 10, length: 200 },
 	search: "",
 	modal: false,
 };
@@ -38,7 +38,7 @@ export const todosReducer = (state = initState, action: todosReducerActions): to
 				error: action.payload,
 				loading: false,
 			};
-		case todosReducerEnum.setPageNumber:
+		case todosReducerEnum.setTodosPage:
 			return {
 				...state,
 				pagination: { ...state.pagination, pageNumber: action.payload },
