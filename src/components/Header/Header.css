@@ -1,0 +1,7 @@
+header {
+    background-color: var(--app-default-bg);
+	color: var(--app-default-fs);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -27,11 +27,11 @@ export const routes: Array<IRoute> = [
 		elem: TodosPage,
 	},
 	{
-		path: routesEnum.notFound,
-		elem: NotFound,
-	},
-	{
 		path: routesEnum.posts,
 		elem: PostPage,
+	},
+	{
+		path: routesEnum.notFound,
+		elem: NotFound,
 	},
 ];

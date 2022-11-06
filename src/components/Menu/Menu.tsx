@@ -9,7 +9,7 @@ const Menu: React.FC = () => {
 	const [activeLink, setActiveLink] = useState<string>("/");
 
 	return (
-		<nav className="nav p-2 fs bg-primary">
+		<nav className="nav p-2">
 			{navLinks.map(({ to, value }) => (
 				<Link
 					to={to}

@@ -51,6 +51,7 @@ export const todosReducer = (state = initState, action: todosReducerActions): to
 				...state,
 				completed: store,
 			};
+			
 		case todosReducerEnum.setSearch:
 			return {
 				...state,

@@ -1,8 +1,10 @@
 .nav {
-    justify-content: center;
-    min-height: 8vh    
+	justify-content: center;
+	min-height: 8vh;
+	
+	width: 60%;
 }
 
 .active {
-	color: rgb(131, 49, 29)!important;
+	color: rgb(131, 49, 29) !important;
 }

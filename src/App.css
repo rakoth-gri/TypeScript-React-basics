@@ -1,14 +1,16 @@
 .App {
-    position: relative;
+	position: relative;
+	background-color: var(--app-default-container);
 }
 
 .container {
-    width: 80%;    
-    padding: 40px;   
-    color:azure;
-    font-size: 1.2rem;
-    text-align: left;
-    min-height: 84vh;
-    position: relative;
-    margin: 1rem auto;
+	width: 80%;
+	padding: 40px;
+	color: var(--app-default-fs);
+	font-size: 1.2rem;
+	text-align: left;
+	min-height: 84vh;
+	position: relative;
+	margin: 1rem auto;
+	background-color: var(--app-default-bg);
 }

@@ -1,17 +1,29 @@
 * {
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+		"Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+	/* Светлая тема */
+	--app-light-bg: #0d6efd;
+	--app-light-container: whitesmoke;
+	--app-light-fs: #f0ffff;
 
+	/* Темная тема */
+	--app-dark-bg: #27282b;
+	--app-dark-container: rgb(27, 26, 26);
+	--app-dark-fs: #c6b116;
 
-
+	/* Дефолтное состояние */
+	--app-default-bg: var(--app-light-bg);
+	--app-default-container: var(--app-light-container);
+	--app-default-fs: var(--app-light-fs);
+}

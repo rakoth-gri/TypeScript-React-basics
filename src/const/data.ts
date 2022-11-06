@@ -23,6 +23,7 @@ export const navLinks = [
 
 // для LS - хранение флагов дел!
 export const completedKey = "completed";
+export const themeKey = "theme";
 
 // CSS для spinner:
 export const spinner: CSSProperties = {
@@ -32,3 +33,31 @@ export const spinner: CSSProperties = {
 	transform: "translate(-50%, -50%)",
 	zIndex: 8,
 };
+
+// Элементы, с изменяемйо темой ------
+interface IthemeElems {
+	prop: string;
+	prefix: string;
+	postfix: string;
+}
+
+export const themeElems = [
+	{
+		prop: "--app-default-bg",
+		prefix: "--app-",
+		postfix: "-bg",
+	},
+	{
+		prop: "--app-default-container",
+		prefix: "--app-",
+		postfix: "-container",
+	},
+	{
+		prop: "--app-default-fs",
+		prefix: "--app-",
+		postfix: "-fs",
+	},
+] as IthemeElems[];
+
+// Root - элемент
+export const root: any = document.querySelector(":root");

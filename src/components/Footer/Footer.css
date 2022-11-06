@@ -2,5 +2,7 @@ footer {
     min-height: 8vh;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center; 
+    background-color: var(--app-default-bg);
+    color: var(--app-default-fs);   
 }
